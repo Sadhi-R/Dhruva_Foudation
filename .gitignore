@@ -1,10 +1,12 @@
-# Build / temp video assets (keep final mp4s)
-videos/frames/
-videos/prep/
-
 # OS / editor
 .DS_Store
 Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Local video build cache (do not publish)
+assets/videos/frames/
+assets/videos/prep/
+videos/frames/
+videos/prep/

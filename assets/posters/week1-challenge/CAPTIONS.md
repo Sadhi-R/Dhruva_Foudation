@@ -6,7 +6,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSfhcioxkbEsuFzJdh6Y6_9OJ4WNXc0jF4H0DJFr
 
 WhatsApp: 8096080360
 
-Poster folder: posters/week1-challenge/
+Poster folder: assets/posters/week1-challenge/
 
 ---
 

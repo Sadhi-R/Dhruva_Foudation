@@ -9,8 +9,9 @@ import imageio_ffmpeg
 from PIL import Image
 
 ROOT = Path(r"D:\Sadhi\Dhruva")
-POSTERS = ROOT / "posters"
-OUT = ROOT / "videos"
+POSTERS = ROOT / "assets" / "posters" / "social"
+WEEK1 = ROOT / "assets" / "posters" / "week1-challenge"
+OUT = ROOT / "assets" / "videos"
 AUDIO = OUT / "audio"
 PREP = OUT / "prep"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
