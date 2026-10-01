@@ -2,6 +2,8 @@
   const nav = document.getElementById("nav");
   const toggle = document.getElementById("navToggle");
   const progressBar = document.getElementById("progressBar");
+  const header = document.querySelector(".site-header");
+  const mobileCta = document.getElementById("mobileCta");
   const FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLSfhcioxkbEsuFzJdh6Y6_9OJ4WNXc0jF4H0DJFr2zky8aZArA/viewform?usp=header";
 
@@ -18,6 +20,13 @@
         toggle.setAttribute("aria-expanded", "false");
       });
     });
+
+    document.addEventListener("click", (e) => {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
   }
 
   const onScroll = () => {
@@ -25,6 +34,8 @@
     const max = doc.scrollHeight - doc.clientHeight;
     const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
     if (progressBar) progressBar.style.width = `${pct}%`;
+    if (header) header.classList.toggle("is-scrolled", window.scrollY > 12);
+    if (mobileCta) mobileCta.classList.toggle("is-show", window.scrollY > 280);
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -41,24 +52,12 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -36px 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
-
-  document.querySelectorAll("[data-track]").forEach((el) => {
-    el.addEventListener("click", () => {
-      const label = el.getAttribute("data-track");
-      if (window.gtag) {
-        window.gtag("event", "cta_click", {
-          event_category: "engagement",
-          event_label: label,
-        });
-      }
-    });
-  });
 
   if ("requestIdleCallback" in window) {
     requestIdleCallback(() => {
