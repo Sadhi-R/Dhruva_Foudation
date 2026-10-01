@@ -68,4 +68,7 @@
       document.head.appendChild(link);
     });
   }
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 })();
