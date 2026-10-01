@@ -1153,8 +1153,16 @@ a {
   }
 
   .hero__visual {
+    width: min(100%, 320px);
     order: -1;
-    max-width: 400px;
+  }
+
+  .hero-visual__frame {
+    max-height: none;
+  }
+
+  .hero-visual__frame img {
+    max-height: min(50vh, 440px);
   }
 
   .steps,
@@ -1219,15 +1227,11 @@ a {
   }
 
   .hero__visual {
-    width: min(100%, 340px);
-  }
-
-  .hero-visual__frame {
-    max-height: min(48vh, 420px);
+    width: min(100%, 300px);
   }
 
   .hero-visual__frame img {
-    max-height: min(44vh, 390px);
+    max-height: min(46vh, 400px);
   }
 
   .mentor__portrait {
