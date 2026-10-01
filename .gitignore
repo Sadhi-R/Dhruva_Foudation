@@ -1,0 +1,10 @@
+# Build / temp video assets (keep final mp4s)
+videos/frames/
+videos/prep/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
